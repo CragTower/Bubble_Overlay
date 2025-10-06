@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 1920;
+    height: 1080;
+    overflow: hidden;
+    background: transparent;
+}
+
+#bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Individual bubble styling */
+.bubble {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: rise-wobble linear forwards;
+    opacity: 0.9;
+}
+
+/* Rise animation */
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-1200px) scale(1.3) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Optional: Add slight wobble for more natural movement */
+@keyframes rise-wobble {
+    0% {
+        transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+        opacity: 0.9;
+    }
+    25% {
+        transform: translateY(-300px) translateX(10px) scale(1.05) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-600px) translateX(-5px) scale(1.15) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-900px) translateX(8px) scale(1.25) rotate(270deg);
+    }
+    100% {
+        transform: translateY(-1200px) translateX(0) scale(1.3) rotate(360deg);
+        opacity: 0;
+    }
+}
+
