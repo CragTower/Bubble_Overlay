@@ -88,4 +88,4 @@ window.addEventListener('onWidgetLoad', function (obj) {
             commands[command]();
         }
     });
-});
+}); 
